@@ -60,7 +60,7 @@ function AddPlacePopup(props) {
     <PopupWithForm
       name="add"
       title="Новое место"
-      text="Сохранить"
+      text={props.isConfirm ? 'Происходит магия...' : 'Сохранить'}
       isOpen={props.isOpen}
       onClose={props.onClose}
       onSubmit={handleSubmit}

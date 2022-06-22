@@ -61,6 +61,7 @@ function Main(props) {
               onImageClick={props.onImageClick}
               onCardClickLike={props.onCardClickLike}
               onCardDelete={props.onCardDelete}
+              onTrashClick={props.onTrashClick}
             />
           );
         })}
