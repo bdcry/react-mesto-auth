@@ -74,6 +74,9 @@
 @import url(./blocks/auth/__input/auth__input.css);
 @import url(./blocks/auth/__link/auth__link.css);
 @import url(./blocks/auth/__title/auth__title.css);
+@import url(./blocks/auth/__email/auth__email.css);
+@import url(./blocks/auth/__link/_signout/auth__link_signout.css);
+@import url(./blocks/auth/__login/auth__login.css);
 
 @import url(./blocks/reg-info/reg-info.css);
 @import url(./blocks/reg-info/__img/reg-info__img.css);

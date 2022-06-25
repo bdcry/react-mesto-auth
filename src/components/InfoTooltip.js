@@ -2,16 +2,14 @@
 
 import React from "react";
 
-import Ok from "../images/Ok.svg"
-import Err from "../images/Err.svg"
 
-function InfoTooltip() {
+function InfoTooltip({ isOpen, onClose, imgInfo, textInfo }) {
     return (
-        <div className="popup reg-info popup_opened">
+        <div className={`popup reg-info ${isOpen && 'popup_opened'}`}>
             <div className="reg-info__window">
-                <button type="button" className="popup__close-button"></button>
-                <img className="reg-info__img" src={Ok} alt="Галочка-Ок" />
-                <h3 className="reg-info__text">Вы успешно зарегистрировались!</h3>
+                <button onClick={onClose} type="button" className="popup__close-button"></button>
+                <img className="reg-info__img" src={imgInfo} alt="Галочка-Ок" />
+                <h3 className="reg-info__text">{textInfo}</h3>
             </div>
         </div>
     )

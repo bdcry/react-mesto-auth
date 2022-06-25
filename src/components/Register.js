@@ -1,20 +1,54 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Register() {
-    const[email, setEmail] = React.useState('')
-    const[password, setPassword] = React.useState('')
+function Register({ onRegister }) {
+  const [state, setState] = React.useState({
+    email: "",
+    password: "",
+  });
 
-    return (
-        <div className="auth page__auth">
-            <h3 className="auth__title">Регистрация</h3>
-            <form className="auth__form">
-                <input className="auth_input" type="email" placeholder="Email" value={email || ''} required />
-                <input className="auth_input" type="password" placeholder="Пароль" value={password || ''} required />
-                <button className="auth__button" type="submit">Зарегистрироваться</button>
-            </form>
-            <span className="auth__link">Уже зарегистрированы? Войти</span>
-        </div>
-    )
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setState((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onRegister(state.password, state.email);
+  }
+
+  return (
+    <div className="auth page__auth">
+      <h3 className="auth__title">Регистрация</h3>
+      <form onSubmit={handleSubmit} className="auth__form">
+        <input
+          onChange={handleChange}
+          value={state.email || ""}
+          className="auth__input"
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          onChange={handleChange}
+          value={state.password || ""}
+          className="auth__input"
+          name="password"
+          type="password"
+          placeholder="Пароль"
+          required
+        />
+        <button className="auth__button" type="submit">
+          Зарегистрироваться
+        </button>
+      </form>
+      <p className="auth__login">Уже зарегистрированы? <Link className="auth__link" to="/sign-in">Войти</Link></p>
+    </div>
+  );
 }
 
-export default Register
+export default Register;
