@@ -22,4 +22,4 @@
 
 **Ссылка на GitHub Pages**
 
-* [Ссылка на GitHub Pages](https://bdcry.github.io/mesto-react)
+* [Ссылка на GitHub Pages](https://bdcry.github.io/react-mesto-auth/)
