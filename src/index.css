@@ -7,6 +7,7 @@
 @import url(./blocks/page/__header/page__header.css);
 @import url(./blocks/logo/logo.css);
 @import url(./blocks/page/__logo/page__logo.css);
+@import url(./blocks/page/__auth/page__auth.css);
 
 @import url(./blocks/content/content.css);
 
@@ -66,6 +67,18 @@
 @import url(./blocks/popup/__error/popup__error.css);
 @import url(./blocks/popup/__error/_visible/popup__error_visible.css);
 @import url(./blocks/spinner/spinner.css);
+
+@import url(./blocks/auth/auth.css);
+@import url(./blocks/auth/__button/auth__button.css);
+@import url(./blocks/auth/__from/auth__from.css);
+@import url(./blocks/auth/__input/auth__input.css);
+@import url(./blocks/auth/__link/auth__link.css);
+@import url(./blocks/auth/__title/auth__title.css);
+
+@import url(./blocks/reg-info/reg-info.css);
+@import url(./blocks/reg-info/__img/reg-info__img.css);
+@import url(./blocks/reg-info/__text/reg-info__text.css);
+@import url(./blocks/reg-info/__window/reg-info__window.css);
 
 body {
     background-color: #000;

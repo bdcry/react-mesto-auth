@@ -7,8 +7,12 @@ import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 import ImagePopup from "./ImagePopup";
 import ConfirmationPopup from "./ConfirmationPopup";
+import InfoTooltip from "./InfoTooltip";
+import Login from "./Login";
+import Register from "./Register";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../context/CurrentUserContext";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
@@ -21,6 +25,7 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isConfirmDeleteCard, setIsConfirmDeleteCard] = React.useState(false);
   const [isConfirmating, setIsConfirmatiing] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(false);
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -165,6 +170,15 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Header />
+        <Switch>
+          <Route path="/sign-up">
+          </Route>
+          <Route path="/sign-in">
+          </Route>
+          <Route>
+            {!loggedIn && <Redirect to="/sing-in" />}
+          </Route>
+        </Switch>
         <Main
           onEditProfile={handleEditProfileClick}
           onEditAvatar={handleEditAvatarClick}
