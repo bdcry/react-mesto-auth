@@ -39,13 +39,13 @@ function EditAvatarPopup(props) {
     props.onUpdateAvatar({ avatar: avaRef.current.value });
   }
   React.useEffect(() => {
-    avaRef.current.value = '';
-  },[props.isOpen])
+    avaRef.current.value = "";
+  }, [props.isOpen]);
   return (
     <PopupWithForm
       name="avatar"
       title="Обновить аватар"
-      text={props.isConfirm ? 'Должно обновиться...' : 'Сохранить'}
+      text={props.isConfirm ? "Должно обновиться..." : "Сохранить"}
       isOpen={props.isOpen}
       onClose={props.onClose}
       onSubmit={handleSubmit}

@@ -6,11 +6,15 @@ function Card(props) {
   // Определяем, являемся ли мы владельцем текущей карточки
   const isOwn = props.card.owner._id === userData._id;
 
-  const cardDeleteButtonClassName = `element__delete element__delete_visible ${isOwn ? "" : "popup element__delete"}`;
+  const cardDeleteButtonClassName = `element__delete element__delete_visible ${
+    isOwn ? "" : "popup element__delete"
+  }`;
   // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
   const isLiked = props.card.likes.some((i) => i._id === userData._id);
 
-  const cardLikeButtonClassName = `element__heart ${isLiked ? "element__heart-active" : ""}`;
+  const cardLikeButtonClassName = `element__heart ${
+    isLiked ? "element__heart-active" : ""
+  }`;
 
   function handleClick() {
     props.onCardClick(props.card);

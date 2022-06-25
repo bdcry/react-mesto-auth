@@ -1,5 +1,3 @@
-// Login — компонент авторизации пользователя с необходимыми стейт-переменными.
-
 import React from "react";
 
 function Login({ onLogin }) {
@@ -44,7 +42,7 @@ function Login({ onLogin }) {
           required
         />
         <button type="submit" className="auth__button">
-            Войти
+          Войти
         </button>
       </form>
     </div>

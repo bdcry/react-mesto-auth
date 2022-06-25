@@ -1,6 +1,6 @@
 import React from "react";
 import VectorLogo from "../images/logo.svg";
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link } from "react-router-dom";
 
 function Header({ onSignOut, userEmail }) {
   return (
@@ -19,8 +19,12 @@ function Header({ onSignOut, userEmail }) {
         </Route>
         <Route path="/">
           <div>
-            <span className='auth__email'>{userEmail || ''}</span>
-            <Link onClick={onSignOut} className="auth__link auth__link_signout" to="/sign-in">
+            <span className="auth__email">{userEmail || ""}</span>
+            <Link
+              onClick={onSignOut}
+              className="auth__link auth__link_signout"
+              to="/sign-in"
+            >
               Выйти
             </Link>
           </div>

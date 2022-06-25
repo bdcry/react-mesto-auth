@@ -63,10 +63,9 @@ function App() {
 
     if (!isLiked) {
       api
-        .getAddLike(card._id) // Отправляем запрос в API и получаем обновлённые данные карточки
+        .getAddLike(card._id)
         .then((newCard) => {
           setCards((prevCards) => {
-            //Обновляем стейт через колбек по предидущему значению стейта без замыкания
             return prevCards.map((c) => (c._id === card._id ? newCard : c));
           });
         })
@@ -78,7 +77,6 @@ function App() {
         .getRemoveLike(card._id)
         .then((newCard) => {
           setCards((prevCards) => {
-            //Обновляем стейт через колбек по предидущему значению стейта без замыкания
             return prevCards.map((c) => (c._id === card._id ? newCard : c));
           });
         })
@@ -251,10 +249,7 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
-        <Header 
-          onSignOut={handleSignOut}
-          userEmail={userEmail} 
-        />
+        <Header onSignOut={handleSignOut} userEmail={userEmail} />
         <Switch>
           <ProtectedRoute
             exact
@@ -273,8 +268,7 @@ function App() {
             isLoading={isLoading}
           />
           <Route path="/sign-up">
-            <Register onRegister={handleRegister} 
-          />
+            <Register onRegister={handleRegister} />
             <InfoTooltip
               isOpen={isInfoTooltipPopupOpen}
               onClose={closeAllPopups}

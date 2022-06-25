@@ -46,7 +46,12 @@ function Register({ onRegister }) {
           Зарегистрироваться
         </button>
       </form>
-      <p className="auth__login">Уже зарегистрированы? <Link className="auth__link" to="/sign-in">Войти</Link></p>
+      <p className="auth__login">
+        Уже зарегистрированы?{" "}
+        <Link className="auth__link" to="/sign-in">
+          Войти
+        </Link>
+      </p>
     </div>
   );
 }
