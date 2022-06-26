@@ -52,12 +52,6 @@ function App() {
       .finally(() => setIsLoading(false));
   }, []);
 
-  React.useEffect(() => {
-    if (loggedIn) {
-      history.push("/");
-    }
-  }, [loggedIn]);
-
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
 
@@ -246,6 +240,16 @@ function App() {
     history.push("/sign-in");
   }
 
+  React.useEffect(() => {
+    handlTokenCheck();
+  }, []);
+
+  React.useEffect(() => {
+    if (loggedIn) {
+      history.push("/");
+    }
+  }, [loggedIn]);
+  
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
