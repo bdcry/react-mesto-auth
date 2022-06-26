@@ -205,6 +205,7 @@ function App() {
           localStorage.setItem("token", res.token);
           setUserEmail(email);
           setLoggedIn(true);
+          history.push("/");
         } else {
           setMessage({
             imgInfo: Err,
@@ -243,12 +244,6 @@ function App() {
   React.useEffect(() => {
     handlTokenCheck();
   }, []);
-
-  React.useEffect(() => {
-    if (loggedIn) {
-      history.push("/");
-    }
-  }, [loggedIn]);
   
   return (
     <CurrentUserContext.Provider value={currentUser}>
