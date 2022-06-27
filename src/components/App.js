@@ -39,18 +39,20 @@ function App() {
   const history = useHistory();
 
   React.useEffect(() => {
-    setIsLoading(true);
-    Promise.all([api.getInitialUser(), api.getInitialCards()])
-      .then(([userData, initialCards]) => {
-        //установка данных пользователя
-        setCurrentUser(userData);
-        setCards(initialCards);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => setIsLoading(false));
-  }, []);
+    if (loggedIn) {
+      setIsLoading(true);
+      Promise.all([api.getInitialUser(), api.getInitialCards()])
+        .then(([userData, initialCards]) => {
+          //установка данных пользователя
+          setCurrentUser(userData);
+          setCards(initialCards);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => setIsLoading(false));
+    }
+  }, [loggedIn]);
 
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
